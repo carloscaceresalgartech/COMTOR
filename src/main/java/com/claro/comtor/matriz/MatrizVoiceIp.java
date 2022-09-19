@@ -4,9 +4,10 @@
  */
 package com.claro.comtor.matriz;
 
-import com.co.claro.linenumber.matriz.IOException_Exception;
-import com.co.claro.linenumber.matriz.ProtocolException_Exception;
+import com.co.claro.linenumber.matriz.MatrizTelefonia;
 import com.co.claro.linenumber.matriz.Resultado;
+import java.io.IOException;
+import java.net.ProtocolException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -18,24 +19,20 @@ import java.util.logging.Logger;
  */
 public class MatrizVoiceIp {
 
-    public List<Resultado> voiceIpMatriz(String serial) throws IOException_Exception, ProtocolException_Exception {
-        
+    public List<Resultado> voiceIpMatriz(String serial) throws ProtocolException, IOException {
+
         List<String> lineas = getLineNumber(serial);
         List<Resultado> informacion = new ArrayList<>();
         for (String linea : lineas) {
-                informacion.add(registroVoiceIp(linea));
+            informacion.add(registroVoiceIp(linea));
         }
         return informacion;
     }
 
-    public Resultado registroVoiceIp(String data) throws IOException_Exception, ProtocolException_Exception {
+    public Resultado registroVoiceIp(String data) throws ProtocolException, IOException {
 
-        com.co.claro.linenumber.matriz.WebServiceMatrizTelefonia_Service service = new com.co.claro.linenumber.matriz.WebServiceMatrizTelefonia_Service();
-        com.co.claro.linenumber.matriz.WebServiceMatrizTelefonia port = service.getWebServiceMatrizTelefoniaPort();
-        // TODO initialize WS operation arguments here
-        // TODO process result here
-        com.co.claro.linenumber.matriz.Resultado result = port.matriztelefonia(data);
-        System.out.println("Result = " + result.toString());
+        MatrizTelefonia matriz = new MatrizTelefonia();
+        com.co.claro.linenumber.matriz.Resultado result = matriz.getMatrizTelefonia(data);
         return result;
     }
 

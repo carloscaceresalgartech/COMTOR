@@ -1,143 +1,69 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.co.claro.linenumber.matriz;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
- * <p>Clase Java para resultado complex type.
- * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
- * 
- * <pre>
- * &lt;complexType name="resultado">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="call_out_right_group" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="impi" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="lineNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ *
+ * @author Carlos Caceres
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "resultado", propOrder = {
-    "callOutRightGroup",
-    "impi",
-    "lineNumber",
-    "status"
-})
 public class Resultado {
+    private String lineNumber;
+    private String call_out_right_group;
+    private String status;
+    private String impi;
 
-    @XmlElement(name = "call_out_right_group")
-    protected String callOutRightGroup;
-    protected String impi;
-    protected String lineNumber;
-    protected String status;
-
-    /**
-     * Obtiene el valor de la propiedad callOutRightGroup.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCallOutRightGroup() {
-        return callOutRightGroup;
+    public Resultado(String call_out_right_group, String status, String impi) {
+        this.call_out_right_group = call_out_right_group;
+        this.status = status;
+        this.impi = impi;
     }
 
-    /**
-     * Define el valor de la propiedad callOutRightGroup.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCallOutRightGroup(String value) {
-        this.callOutRightGroup = value;
+    public Resultado(String lineNumber, String call_out_right_group, String status, String impi) {
+        this.lineNumber = lineNumber;
+        this.call_out_right_group = call_out_right_group;
+        this.status = status;
+        this.impi = impi;
+    }
+    
+    
+
+    public String getCall_out_right_group() {
+        return call_out_right_group;
     }
 
-    /**
-     * Obtiene el valor de la propiedad impi.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getImpi() {
-        return impi;
+    public void setCall_out_right_group(String call_out_right_group) {
+        this.call_out_right_group = call_out_right_group;
     }
 
-    /**
-     * Define el valor de la propiedad impi.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setImpi(String value) {
-        this.impi = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad lineNumber.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLineNumber() {
-        return lineNumber;
-    }
-
-    /**
-     * Define el valor de la propiedad lineNumber.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLineNumber(String value) {
-        this.lineNumber = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad status.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
     public String getStatus() {
         return status;
     }
 
-    /**
-     * Define el valor de la propiedad status.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStatus(String value) {
-        this.status = value;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
+    public String getImpi() {
+        return impi;
+    }
+
+    public void setImpi(String impi) {
+        this.impi = impi;
+    }
+
+    @Override
+    public String toString() {
+        return "Resultado{" + "call_out_right_group=" + call_out_right_group + ", status=" + status + ", impi=" + impi + '}';
+    }
+
+    public String getLineNumber() {
+        return lineNumber;
+    }
+
+    public void setLineNumber(String lineNumber) {
+        this.lineNumber = lineNumber;
+    }
+    
 }

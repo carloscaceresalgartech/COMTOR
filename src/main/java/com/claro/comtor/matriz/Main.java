@@ -4,8 +4,7 @@
  */
 package com.claro.comtor.matriz;
 
-import com.co.claro.linenumber.matriz.IOException_Exception;
-import com.co.claro.linenumber.matriz.ProtocolException_Exception;
+
 import com.co.claro.linenumber.matriz.Resultado;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,22 +16,22 @@ import java.util.logging.Logger;
  * @author Carlos Caceres
  */
 public class Main {
-
+ /*
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    /* public static void main(String[] args) {
         // TODO code application logic here
- /*
+
       
        registroVoiceIp(serial);
-   */
-     String serial = "ZTENQAJK9402500";
+
+     String serial = "MG6008NW2P1901000078";
      List<String> lineas = getLineNumber(serial);
      List<Resultado> informacion = new ArrayList<>();
      for(String linea:lineas){
           System.out.println(linea);
-      /*   try {
+         try {
              System.out.println(linea);
              informacion.add(registroVoiceIp(linea));
          } catch (IOException_Exception ex) {
@@ -40,8 +39,13 @@ public class Main {
          } catch (ProtocolException_Exception ex) {
              Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
          }
-*/
+
      }   
+     
+     for(Resultado info:informacion){
+         System.out.println(info.getLineNumber()+" "+info.getImpi()+" "+
+                 info.getStatus()+"  "+info.getCallOutRightGroup());
+     }
     }
     
     public static Resultado registroVoiceIp(String data) throws IOException_Exception, ProtocolException_Exception{
@@ -66,5 +70,5 @@ public class Main {
             return result;
         
     }
-    
+       */
 }

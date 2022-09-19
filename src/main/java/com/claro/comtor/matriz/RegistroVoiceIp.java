@@ -4,9 +4,9 @@
  */
 package com.claro.comtor.matriz;
 
-import com.co.claro.linenumber.matriz.IOException_Exception;
-import com.co.claro.linenumber.matriz.ProtocolException_Exception;
 import com.co.claro.linenumber.matriz.Resultado;
+import java.io.IOException;
+import java.net.ProtocolException;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -23,7 +23,7 @@ public class RegistroVoiceIp {
      * This is a sample web service operation
      */
     @WebMethod(operationName = "hello")
-    public List<Resultado> matrizVoiceIp(@WebParam(name = "serial") String serial) throws IOException_Exception, ProtocolException_Exception {
+    public List<Resultado> matrizVoiceIp(@WebParam(name = "serial") String serial) throws ProtocolException, IOException  {
         return new MatrizVoiceIp().voiceIpMatriz(serial);
     }
 }
