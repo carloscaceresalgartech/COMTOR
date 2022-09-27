@@ -12,7 +12,7 @@ public class Config {
     
     public static String urlDev ="localhost:9093";
     public static String urlProd ="172.31.238.37";
-    public static int mode = 1;
+    public static int mode = 0;
     
     public static String urlComtor(){
         return (mode == 0)?urlDev:urlProd;

@@ -11,5 +11,8 @@ com\co\claro\linenumber\matriz\Resultado.class
 com\co\claro\linenumber\GetLineNumbersResponse.class
 com\co\claro\linenumber\LineNumberService.class
 com\claro\comtor\matriz\Main.class
+com\co\claro\linenumber\matriz\ChangePassword.class
 com\co\claro\linenumber\matriz\MatrizTelefonia.class
+com\co\claro\linenumber\matriz\ChangePasswordVoiceIp.class
 com\claro\comtor\matriz\MatrizVoiceIp.class
+com\claro\comtor\matriz\MainLine.class
