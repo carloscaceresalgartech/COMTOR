@@ -51,4 +51,24 @@ public class ChangePasswordVoiceIp {
         }
     }
 
+    public String changeStatusPassword(String data) throws MalformedURLException, ProtocolException, IOException {
+            URL url = new URL("http://" + Config.urlComtor() + "/TelmexImsDev2020/ws/v1/checkStatusPassChangeImsUser");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setDoOutput(true);
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Hash-Key", "3BZgCq2VfZ3HE6gsf3XYYotCthpbROOtPbsWwxaG91E=");
+            con.setRequestProperty("Timestamp", "1660149710");
+            con.getOutputStream().write(data.getBytes("UTF-8"));
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+            JSONTokener tokener = new JSONTokener(reader);
+            JSONObject json = new JSONObject(tokener);
+            String str = json.toString();
+            System.out.println(str);
+            String response=str.split("response\":\"")[1].split("\",\"message\"")[0]; 
+            return response;
+    }
+
 }

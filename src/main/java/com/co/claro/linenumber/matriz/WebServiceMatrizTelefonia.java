@@ -4,6 +4,7 @@
  */
 package com.co.claro.linenumber.matriz;
 
+import static com.claro.comtor.matriz.Incidencia.delay;
 import com.claro.comtor.matriz.MatrizVoiceIp;
 import java.io.IOException;
 import java.net.ProtocolException;
@@ -50,9 +51,20 @@ public class WebServiceMatrizTelefonia {
     }
 
     @WebMethod(operationName = "changepassword")
-    public ChangePassword changePassword(@WebParam(name = "data") String data) throws ProtocolException, IOException {
-        ChangePasswordVoiceIp voiceIp = new ChangePasswordVoiceIp();
-        return voiceIp.changePassword(data);
+    public String changePassword(@WebParam(name = "data") String data) throws ProtocolException, IOException {
+              ChangePasswordVoiceIp c = new ChangePasswordVoiceIp();
+        ChangePassword changePassword = c.changePassword(data);
+        String numIncidencia = changePassword.getResponse();
+       // String numIncidencia="241794";
+        System.out.println("Procesando.....");
+        delay(10000L);
+        String response = c.changeStatusPassword(numIncidencia);
+        if(response.equals("Finished")){
+            return "OK";
+        }
+        else{
+            return "ERROR";
+        }
     }
 
 }

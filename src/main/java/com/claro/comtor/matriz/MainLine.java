@@ -19,8 +19,7 @@ public class MainLine {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        /*
-        MatrizVoiceIp matriz = new MatrizVoiceIp();
+     /*           MatrizVoiceIp matriz = new MatrizVoiceIp();
         List<String> lineas = matriz.getLineNumber("MG6008NW2P1901000078");
         System.out.println("*****************************************************");
         for(String linea:lineas ){
@@ -30,10 +29,13 @@ public class MainLine {
               }   
         }      
        System.out.println("*****************************************************");
-     */
+        //ChangePasswordVoiceIp c = new ChangePasswordVoiceIp();
+       */
      ChangePasswordVoiceIp c = new ChangePasswordVoiceIp();
      ChangePassword changePassword = c.changePassword("+576017459700");
-        System.out.println(changePassword.toString());     
+     System.out.println(changePassword.toString());     
+     String numIncidencia = changePassword.getResponse();
+     System.out.println(numIncidencia);
     }
-    
+
 }
